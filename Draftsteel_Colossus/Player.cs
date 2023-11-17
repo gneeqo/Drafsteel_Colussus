@@ -8,5 +8,12 @@ namespace Draftsteel_Colossus
 {
     class Player
     {
+
+        List<Booster> packs;
+
+        List<Card> pool;
+        
+        //cards that have been seen and can't be considered by the bot
+        List<Card> seen;
     }
 }

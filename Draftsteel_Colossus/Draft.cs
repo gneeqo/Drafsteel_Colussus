@@ -8,5 +8,13 @@ namespace Draftsteel_Colossus
 {
     class Draft
     {
+        List<Card> allcards;
+
+        List<Booster> allpacks;
+
+        List<Player> allPlayers;
+
+
+
     }
 }

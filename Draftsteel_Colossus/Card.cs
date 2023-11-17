@@ -8,50 +8,50 @@ namespace Draftsteel_Colossus
 {
     class Card
     {
-
-        String Name;
-        enum cardType
-        { 
-            creature,
-            land,
-            instant,
-            sorcery,
-            enchantment,
-            artifact,
-            planeswalker,
-            battle
-        };
         
-
-
-        float white;
-        float black;
-        float blue;
-        float red;
-        float green;
-
-        cardType type;
-
-        float value;
-
-        float infamy;
-
-        float aggro;
-        float reanimate;
-        float breach;
-        float ramp;
-        float control;
-        float artifacts;
-        float storm;
-        float sacrifice;
-        float blink;
-        float lands;
-
-        List<String> combos_names;
-        List<String> nonbos_names;
-
-        List<Card> combos;
-        List<Card> nonbos;
+        public String Name;
+      public enum cardType
+       { 
+                 creature,
+                 land,
+                 instant,
+                 sorcery,
+                 enchantment,
+                 artifact,
+                 planeswalker,
+                 battle
+             };
+     
+     
+     
+      public float white;
+      public float black;
+      public float blue;
+      public float red;
+      public float green;
+      
+      public cardType type;
+      
+      public float value;
+      
+      public float infamy;
+      
+      public float aggro;
+      public float reanimate;
+      public float breach;
+      public float ramp;
+      public float control;
+      public float artifacts;
+      public float storm;
+      public float sacrifice;
+      public float blink;
+      public float lands;
+      
+      public List<String> combos_names;
+      public List<String> nonbos_names;
+      
+      public List<Card> combos;
+      public List<Card> nonbos;
 
 
 
