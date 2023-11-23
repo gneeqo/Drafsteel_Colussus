@@ -10,6 +10,9 @@ namespace Draftsteel_Colossus
     {
         public string name;
 
+        public int wins;
+        public int losses;
+
         float johnny;
         float spike;
         float timmy;
