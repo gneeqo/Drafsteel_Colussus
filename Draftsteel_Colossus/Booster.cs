@@ -8,12 +8,20 @@ namespace Draftsteel_Colossus
 {
     class Booster
     {
-        List<Card> remainingCards;
+        public List<Card> remainingCards;
+
+        public Booster(int numCards, List<Card> pool)
+        {
+            for (int i = 0; i < numCards; ++i)
+            {
+                addCard(pool);
+            }
+        }
 
         public Card pickCard(String pickName)
         {
             //gets the card which was picked
-            Card returnValue = remainingCards.Find(x => pickName == x.Name);
+            Card returnValue = remainingCards.Find(x => pickName == x.name);
 
             //removes it from the list
             remainingCards.Remove(returnValue);
