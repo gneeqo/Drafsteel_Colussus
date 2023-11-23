@@ -70,6 +70,83 @@ namespace Draftsteel_Colossus
             return value.ToString("yyyyMMdd_HHmmss");
         }
 
+        void OutputPlayerData()
+        {
+            // TODO: Change this to a better data format
+            foreach (Player p in allPlayers)
+            {
+                // Create a new file in the output directory
+                string path = outputDirectory;
+                try
+                {
+                    String timeStamp = GetTimestamp(DateTime.Now);
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, p.name + "_" + timeStamp + ".txt"), true))
+                    {
+                        outputFile.WriteLine("Name: " + p.name);
+                        outputFile.WriteLine("Wins: " + p.wins + ", Losses: " + p.losses);
+
+                        // Write each card name to the newly created text file
+                        for (int i = 0; i < p.pool.Count; ++i)
+                        {
+                            outputFile.WriteLine(p.pool[i].name);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+        }
+
+        // Simple random shuffle function, just does n random swaps
+        void Shuffle(List<Player> list)
+        {
+            Random rng = new Random();
+
+            int n = list.Count;
+            while (n > 1)
+            {
+                --n;
+                // Get a random index
+                int k = rng.Next(n + 1);
+                // Swap the values
+                Player value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
+        void AssignWinningStatistics()
+        {
+            // Make a list of the winners and add shuffle them around
+            List<Player> winners = new List<Player>();
+            for(int i = 0; i < numPlayers; ++i)
+            {
+                winners.Add(allPlayers[i]);
+            }
+            Shuffle(winners);
+
+            // Player 0 went 3-0, Players 1 thru 3 went 2-1, 4 thru 6 went 1-2, and player 7 went 0-3
+            winners[0].wins = 3;
+            winners[0].losses = 0;
+
+            for(int i = 1; i <= 3; ++i)
+            {
+                winners[i].wins = 2;
+                winners[i].losses = 1;
+            }
+
+            for (int i = 4; i <= 6; ++i)
+            {
+                winners[i].wins = 1;
+                winners[i].losses = 2;
+            }
+
+            winners[7].wins = 0;
+            winners[7].losses = 3;
+        }
+
         public void playDraft()
         {
             // Read all the player data first
@@ -110,31 +187,15 @@ namespace Draftsteel_Colossus
                 }
             }
 
-            // At this point, all packs have been drafted and each player has a pool of cards
+            // Randomly assign winning statistics
+            AssignWinningStatistics();
 
+            // At this point, all packs have been drafted and each player has a pool of cards and a win/loss score
             // Output all of the cards that each player has to a .txt for now
-            // TODO: Change this to a better data format
-            foreach(Player p in allPlayers)
-            {
-                // Create a new file in the output directory
-                string path = outputDirectory;
-                try
-                {
-                    String timeStamp = GetTimestamp(DateTime.Now);
-                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, p.name + "_" + timeStamp + ".txt"), true))
-                    {
-                        // Write each card name to the newly created text file
-                        for(int i = 0; i < p.pool.Count; ++i)
-                        {
-                            outputFile.WriteLine(p.pool[i].name);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-            }
+            OutputPlayerData();
+
+            // TODO: Using the players that won/lost, adjust the values in the table accordingly
+
         }
     }
 }
