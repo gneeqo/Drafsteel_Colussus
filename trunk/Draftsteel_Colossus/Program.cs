@@ -12,50 +12,64 @@ namespace Draftsteel_Colossus
         {
             Console.WriteLine("Bingus");
 
- Draft draft = new Draft();
-  draft.playDraft();
+ 
 
 
-List<Card> cardlist = Card.ReadInCards("..//..//Data//11_22_CardValueTest.csv");
+           List<Card> cardlist = Card.ReadInCards("..//..//Data//11_22_CardValueTest.csv");
 
-            bool firstCard = true;
+           
+
+            Draft draft = new Draft(cardlist);
+            draft.playDraft();
+
             
-            Console.WriteLine();
-            foreach (var currentcard in cardlist)
-            {
-                if (firstCard)
-                {
 
-                    Console.Write("Name ");
-                    Console.Write("Type ");
+            bool DoStringOutput = false;
+           
+            //Uncomment below line to get a string output of the card list (a little janky)
+           //DoStringOutput = true;
+            if (DoStringOutput)
+            {
+                bool firstCard = true;
+                Console.WriteLine();
+                foreach (var currentcard in cardlist)
+                {
+                    if (firstCard)
+                    {
+
+                        Console.Write("Name ");
+                        Console.Write("Type ");
+                        foreach (var data in currentcard.attributes)
+                        {
+                            Console.Write(data.Key);
+                            Console.Write(" ");
+
+                        }
+                        Console.WriteLine();
+                        firstCard = false;
+                    }
+
+                    Console.Write(currentcard.name);
+
+                    Console.Write(" ");
+
+                    Console.Write(currentcard.type.ToString());
+
+                    Console.Write(" ");
+
                     foreach (var data in currentcard.attributes)
                     {
-                        Console.Write(data.Key);
-                        Console.Write(" ");
+                        Console.Write(data.Value.ToString());
+
+                        var whitespace = new String(' ', data.Key.Length);
+                        Console.Write(whitespace);
 
                     }
                     Console.WriteLine();
-                    firstCard = false;
                 }
-
-                Console.Write(currentcard.name);
-
-                Console.Write(" ");
-
-                Console.Write(currentcard.type.ToString());
-
-                Console.Write(" ");
-
-                foreach (var data in currentcard.attributes)
-                {
-                    Console.Write(data.Value.ToString());
-
-                    var whitespace = new String(' ',data.Key.Length);
-                    Console.Write(whitespace);
-
-                }
-                Console.WriteLine();
-            }            Console.ReadKey();
+            }
+            
+            Console.ReadKey();
         }
     }
 
