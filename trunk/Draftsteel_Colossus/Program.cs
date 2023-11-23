@@ -12,11 +12,54 @@ namespace Draftsteel_Colossus
         {
             Console.WriteLine("Bingus");
 
-            Draft draft = new Draft();
+ Draft draft = new Draft();
+  draft.playDraft();
 
-            draft.playDraft();
 
-            Console.ReadKey();
+List<Card> cardlist = Card.ReadInCards("..//..//Data//11_22_CardValueTest.csv");
+
+            bool firstCard = true;
+            
+            Console.WriteLine();
+            foreach (var currentcard in cardlist)
+            {
+                if (firstCard)
+                {
+
+                    Console.Write("Name ");
+                    Console.Write("Type ");
+                    foreach (var data in currentcard.attributes)
+                    {
+                        Console.Write(data.Key);
+                        Console.Write(" ");
+
+                    }
+                    Console.WriteLine();
+                    firstCard = false;
+                }
+
+                Console.Write(currentcard.name);
+
+                Console.Write(" ");
+
+                Console.Write(currentcard.type.ToString());
+
+                Console.Write(" ");
+
+                foreach (var data in currentcard.attributes)
+                {
+                    Console.Write(data.Value.ToString());
+
+                    var whitespace = new String(' ',data.Key.Length);
+                    Console.Write(whitespace);
+
+                }
+                Console.WriteLine();
+            }            Console.ReadKey();
         }
     }
+
+
+
+
 }
