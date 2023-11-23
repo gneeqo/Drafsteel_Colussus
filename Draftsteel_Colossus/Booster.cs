@@ -10,8 +10,15 @@ namespace Draftsteel_Colossus
     {
         public List<Card> remainingCards;
 
+        public Booster()
+        {
+            remainingCards = new List<Card>();
+        }
+
         public Booster(int numCards, List<Card> pool)
         {
+            remainingCards = new List<Card>();
+
             for (int i = 0; i < numCards; ++i)
             {
                 addCard(pool);
