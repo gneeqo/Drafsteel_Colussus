@@ -14,7 +14,7 @@ namespace Draftsteel_Colossus
         float spike;
         float timmy;
 
-        List<Card> pool;
+        public List<Card> pool;
         
         //cards that have been seen and can't be considered by the bot
         List<Card> seen;

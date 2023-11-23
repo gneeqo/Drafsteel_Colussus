@@ -12,6 +12,10 @@ namespace Draftsteel_Colossus
         {
             Console.WriteLine("Bingus");
 
+            Draft draft = new Draft();
+
+            draft.playDraft();
+
             Console.ReadKey();
         }
     }

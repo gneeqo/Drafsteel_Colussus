@@ -11,6 +11,7 @@ namespace Draftsteel_Colossus
     {
         string cardsFileName = "../../Data/MTGOVintageCube.txt";
         string playersFileName = "../../Data/PlayerData.txt";
+        string outputDirectory = "../../Data/Output";
 
         int numPlayers = 8;
         int numPacks = 3;
@@ -23,6 +24,12 @@ namespace Draftsteel_Colossus
 
         List<Player> allPlayers;
 
+        public Draft()
+        {
+            allCards = new List<Card>();
+            allPacks = new List<Booster>();
+            allPlayers = new List<Player>();
+        }
         void readPlayerData(string filename)
         {
             // TODO: THIS IS TEMPORARY PLAYER DATA READING
@@ -58,7 +65,12 @@ namespace Draftsteel_Colossus
             }
         }
 
-        void playDraft()
+        public static String GetTimestamp(DateTime value)
+        {
+            return value.ToString("yyyyMMdd_HHmmss");
+        }
+
+        public void playDraft()
         {
             // Read all the player data first
             readPlayerData(playersFileName);
@@ -74,7 +86,7 @@ namespace Draftsteel_Colossus
             for(int round = 0; round < numPacks; ++round)
             {
                 // Determines where the packs start
-                int startingPackIndex = numPacks * round;
+                int startingPackIndex = numPlayers * round;
 
                 int pick = -1;
 
@@ -86,7 +98,8 @@ namespace Draftsteel_Colossus
                     for (int currPlayer = 0; currPlayer < allPlayers.Count; ++currPlayer)
                     {
                         // Determine which pack each player looks at
-                        Booster currPack = allPacks[startingPackIndex + ((pick + currPlayer) % allPlayers.Count)];
+                        int packIndex = startingPackIndex + ((pick + currPlayer) % allPlayers.Count);
+                        Booster currPack = allPacks[packIndex];
 
                         for (int j = 0; j < numPicksPer; ++j)
                         {
@@ -98,6 +111,30 @@ namespace Draftsteel_Colossus
             }
 
             // At this point, all packs have been drafted and each player has a pool of cards
+
+            // Output all of the cards that each player has to a .txt for now
+            // TODO: Change this to a better data format
+            foreach(Player p in allPlayers)
+            {
+                // Create a new file in the output directory
+                string path = outputDirectory;
+                try
+                {
+                    String timeStamp = GetTimestamp(DateTime.Now);
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, p.name + "_" + timeStamp + ".txt"), true))
+                    {
+                        // Write each card name to the newly created text file
+                        for(int i = 0; i < p.pool.Count; ++i)
+                        {
+                            outputFile.WriteLine(p.pool[i].name);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
         }
     }
 }
