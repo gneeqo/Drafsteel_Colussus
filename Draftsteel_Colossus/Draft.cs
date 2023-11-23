@@ -30,6 +30,13 @@ namespace Draftsteel_Colossus
             allPacks = new List<Booster>();
             allPlayers = new List<Player>();
         }
+        public Draft(List<Card> deserializedlist)
+        {
+            allCards = deserializedlist;
+            allPacks = new List<Booster>();
+            allPlayers = new List<Player>();
+        }
+
         void readPlayerData(string filename)
         {
             // TODO: THIS IS TEMPORARY PLAYER DATA READING
@@ -152,8 +159,9 @@ namespace Draftsteel_Colossus
             // Read all the player data first
             readPlayerData(playersFileName);
 
-            // Read in all of the card data
-            readCardData(cardsFileName);
+            // Read in all of the card data\
+            //atm card data read in in program.cs
+            //readCardData(cardsFileName);
 
             // Generate all the packs
             generatePacks();
