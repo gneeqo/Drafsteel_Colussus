@@ -9,7 +9,7 @@ namespace Draftsteel_Colossus
     class Card
     {
         
-        public String Name;
+        public String name;
       public enum cardType
        { 
                  creature,
@@ -52,8 +52,6 @@ namespace Draftsteel_Colossus
       
       public List<Card> combos;
       public List<Card> nonbos;
-
-
 
     }
 }
