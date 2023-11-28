@@ -16,7 +16,7 @@ namespace Draftsteel_Colossus_Visual
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Bingus());
         }
     }
 }
