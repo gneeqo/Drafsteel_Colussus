@@ -11,9 +11,7 @@ using Microsoft.VisualBasic.FileIO;
 namespace Draftsteel_Colossus
 {
     class Card
-    {
-
-        
+    {     
 
       public String name;
       public enum cardType
