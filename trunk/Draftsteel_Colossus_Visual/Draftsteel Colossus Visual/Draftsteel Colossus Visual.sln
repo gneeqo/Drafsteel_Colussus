@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draftsteel Colossus Visual", "Draftsteel Colossus Visual\Draftsteel Colossus Visual.csproj", "{30F75B52-05D4-4300-AA73-92B15DBAB117}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30F75B52-05D4-4300-AA73-92B15DBAB117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F75B52-05D4-4300-AA73-92B15DBAB117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F75B52-05D4-4300-AA73-92B15DBAB117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F75B52-05D4-4300-AA73-92B15DBAB117}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {103E42FE-6EA8-4C78-8D76-6EC9548B96BA}
+	EndGlobalSection
+EndGlobal
