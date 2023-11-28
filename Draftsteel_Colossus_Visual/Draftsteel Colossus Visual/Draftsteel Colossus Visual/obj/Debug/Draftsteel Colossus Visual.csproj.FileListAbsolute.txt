@@ -1,0 +1,11 @@
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\bin\Debug\Draftsteel Colossus Visual.exe.config
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\bin\Debug\Draftsteel Colossus Visual.exe
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\bin\Debug\Draftsteel Colossus Visual.pdb
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.csproj.AssemblyReference.cache
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.csproj.SuggestedBindingRedirects.cache
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Form1.resources
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Properties.Resources.resources
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.csproj.GenerateResource.cache
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.csproj.CoreCompileInputs.cache
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.exe
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel_Colossus_Visual\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.pdb
