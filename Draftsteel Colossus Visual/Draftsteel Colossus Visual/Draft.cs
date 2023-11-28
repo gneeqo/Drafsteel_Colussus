@@ -9,9 +9,10 @@ namespace Draftsteel_Colossus
 {
     class Draft
     {
-        string cardsFileName = "../../Data/MTGOVintageCube.txt";
-        string playersFileName = "../../Data/PlayerData.txt";
-        string outputDirectory = "../../Data/Output";
+        public string cardsFileName = "";
+        public string playersFileName = "";
+        private string dataDirectory = "../../Data/";
+        private string outputDirectory = "../../Data/Output";
 
         int numPlayers = 8;
         int numPacks = 3;
@@ -23,13 +24,23 @@ namespace Draftsteel_Colossus
         List<Booster> allPacks;
 
         List<Player> allPlayers;
-
+            
         public Draft()
         {
             allCards = new List<Card>();
             allPacks = new List<Booster>();
             allPlayers = new List<Player>();
         }
+
+        public void setCardsFileName(string name)
+        {
+            cardsFileName = dataDirectory + name;
+        }
+        public void setPlayerFileName(string name)
+        {
+            playersFileName = dataDirectory + name;
+        }
+
         void readPlayerData(string filename)
         {
             // TODO: THIS IS TEMPORARY PLAYER DATA READING

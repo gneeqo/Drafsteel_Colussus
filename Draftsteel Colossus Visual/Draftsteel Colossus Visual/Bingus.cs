@@ -19,6 +19,7 @@ namespace Draftsteel_Colossus_Visual
         public Bingus()
         {
             InitializeComponent();
+
         }
 
         private void btn_ClickMe_Click(object sender, EventArgs e)
@@ -28,6 +29,10 @@ namespace Draftsteel_Colossus_Visual
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select a File";
             openFileDialog.Filter = "All Files (*.*)|*.*";
+
+            // Set the initial directory two levels above the application's executable
+            string initialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Data");
+            openFileDialog.InitialDirectory = Path.GetFullPath(initialDirectory);
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
