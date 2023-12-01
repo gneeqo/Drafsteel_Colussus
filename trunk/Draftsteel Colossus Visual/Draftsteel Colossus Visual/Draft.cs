@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Draftsteel_Colossus_Visual;
 
 namespace Draftsteel_Colossus
 {
@@ -63,6 +64,12 @@ namespace Draftsteel_Colossus
             {
                 Card currcard = new Card();
                 currcard.name = cardnames[i];
+
+                // Load the card's image
+                currcard.image = ScryfallAPI.GetCardImage(currcard.name);
+                if(currcard.image != null)
+                    currcard.image.Save("../../Images/" + currcard.name + ".jpg");
+
                 allCards.Add(currcard);
             }
         }
