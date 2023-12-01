@@ -15,11 +15,12 @@ namespace Draftsteel_Colossus_Visual
     {
 
         private List<string> fileList = new List<string>();
+        private Bitmap image;
+        private string cardname = "Black Lotus";
 
         public Bingus()
         {
             InitializeComponent();
-
         }
 
         private void btn_ClickMe_Click(object sender, EventArgs e)
@@ -73,17 +74,23 @@ namespace Draftsteel_Colossus_Visual
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            cardname = tb_InputBox.Text;
         }
 
         private void Bingus_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
                 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            image = ScryfallAPI.GetCardImage(cardname);
+            pictureBox1.Image = image;
         }
     }
 }
