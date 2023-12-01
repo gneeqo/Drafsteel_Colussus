@@ -31,8 +31,6 @@ namespace Draftsteel_Colossus_Visual
 
         private void btn_GenerateDraft_Click(object sender, EventArgs e)
         {
-
-
             draft.playDraft();
         }
 

@@ -37,14 +37,13 @@
             this.lb_SelectedCardFile = new System.Windows.Forms.Label();
             this.lb_SelectedPlayerFile = new System.Windows.Forms.Label();
             this.lb_SelectedPlayerLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_GenerateDraft
             // 
             this.btn_GenerateDraft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_GenerateDraft.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GenerateDraft.Location = new System.Drawing.Point(678, 409);
+            this.btn_GenerateDraft.Location = new System.Drawing.Point(678, 379);
             this.btn_GenerateDraft.Name = "btn_GenerateDraft";
             this.btn_GenerateDraft.Size = new System.Drawing.Size(296, 148);
             this.btn_GenerateDraft.TabIndex = 0;
@@ -140,21 +139,11 @@
             this.lb_SelectedPlayerLabel.TabIndex = 7;
             this.lb_SelectedPlayerLabel.Text = "Selected Player File:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(535, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Simulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 583);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lb_SelectedPlayerFile);
             this.Controls.Add(this.lb_SelectedPlayerLabel);
             this.Controls.Add(this.lb_SelectedCardFile);
@@ -182,6 +171,5 @@
         private System.Windows.Forms.Label lb_SelectedCardFile;
         private System.Windows.Forms.Label lb_SelectedPlayerFile;
         private System.Windows.Forms.Label lb_SelectedPlayerLabel;
-        private System.Windows.Forms.Button button1;
     }
 }

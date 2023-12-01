@@ -32,6 +32,8 @@
             this.lb_MyLabel = new System.Windows.Forms.Label();
             this.tb_InputBox = new System.Windows.Forms.TextBox();
             this.lv_FileView = new System.Windows.Forms.ListView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_ClickMe
@@ -74,11 +76,21 @@
             this.lv_FileView.View = System.Windows.Forms.View.List;
             this.lv_FileView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(539, 110);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 288);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Bingus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 446);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lv_FileView);
             this.Controls.Add(this.tb_InputBox);
             this.Controls.Add(this.lb_MyLabel);
@@ -86,6 +98,7 @@
             this.Name = "Bingus";
             this.Text = "Bingus";
             this.Load += new System.EventHandler(this.Bingus_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,6 +110,7 @@
         private System.Windows.Forms.Label lb_MyLabel;
         private System.Windows.Forms.TextBox tb_InputBox;
         private System.Windows.Forms.ListView lv_FileView;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
