@@ -35,10 +35,32 @@ namespace Draftsteel_Colossus_Visual
             var jsonResponse = cardResponse.Result.Content.ReadAsStringAsync();
             jsonResponse.Wait();
 
+
             // Card data found, now try to get the card image from it
             string myString = jsonResponse.Result;
             JObject obj = JObject.Parse(jsonResponse.Result);
-            string imageURL = (string)obj["image_uris"]["small"];
+
+            if (obj == null)
+                return null;
+
+            string imageURL = "";
+
+            if (obj["image_uris"] == null)
+            {
+                if (obj["card_faces"][0] != null)
+                {
+                    imageURL = (string)obj["card_faces"][0]["image_uris"]["small"];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            else
+            {
+                imageURL = (string)obj["image_uris"]["small"];
+            }
 
             cardRequest = new HttpRequestMessage(HttpMethod.Get, imageURL);
             cardResponse = client.SendAsync(cardRequest);
@@ -57,7 +79,7 @@ namespace Draftsteel_Colossus_Visual
         public static Bitmap GetCardImage(string cardname)
         {
             // Sleep for a bit to not overload Scryfall's API
-            Thread.Sleep(75);
+            Thread.Sleep(50);
 
             string cardURL = URL + cardname;
             Bitmap cardimage = APICall(cardURL).Result;

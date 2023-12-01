@@ -15,12 +15,9 @@ namespace Draftsteel_Colossus_Visual
         [STAThread]
         static void Main()
         {
-            Bitmap image = ScryfallAPI.GetCardImage("Black Lotus");
-            Bitmap image2 = ScryfallAPI.GetCardImage("Black Lotus");
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Bingus());
+            Application.Run(new Simulator());
         }
     }
 }

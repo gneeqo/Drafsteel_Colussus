@@ -350,7 +350,7 @@ Orcish Lumberjack
 Manamorphose
 Talisman of Impulse
 Wrenn and Six
-Minsc & Boo, Timeless Heroes
+Minsc and Boo, Timeless Heroes
 Escape to the Wilds
 Kogla and Yidaro
 Etali, Primal Conqueror
@@ -378,7 +378,7 @@ Fiend Artisan
 Talisman of Resilience
 Tear Asunder
 Grist, the Hunger Tide
-Life // Death
+Life
 Vraska, Golgari Queen
 Figure of Destiny
 Forth Eorlingas!

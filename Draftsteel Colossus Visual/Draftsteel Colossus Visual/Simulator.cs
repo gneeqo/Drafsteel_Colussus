@@ -109,6 +109,13 @@ namespace Draftsteel_Colossus_Visual
                     // Update the ListBox
                     UpdateFileList(lv_CardFiles, cardFileList);
 
+                    string filename = Path.GetFileName(selectedFile);
+
+                    // Set the filename for the draft
+                    draft.setCardsFileName(filename);
+
+                    // Set the label
+                    lb_SelectedCardFile.Text = filename;
                 }
                 else
                 {
@@ -139,6 +146,14 @@ namespace Draftsteel_Colossus_Visual
 
                     // Update the ListBox
                     UpdateFileList(lv_PlayerFiles, playerFileList);
+
+                    string filename = Path.GetFileName(selectedFile);
+
+                    // Set the filename for the draft
+                    draft.setPlayerFileName(filename);
+
+                    // Set the label
+                    lb_SelectedPlayerFile.Text = filename;
                 }
                 else
                 {

@@ -1,36 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using Draftsteel_Colossus_Visual;
 using Microsoft.VisualBasic.FileIO;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace Draftsteel_Colossus
 {
     class Card
-    {     
+    {
+        public String name;
 
-      public String name;
-      public enum cardType
-       { 
-                 creature,
-                 land,
-                 instant,
-                 sorcery,
-                 enchantment,
-                 artifact,
-                 planeswalker,
-                 battle,
-                 invalid
-             };
-     
-     
-      public Dictionary<String, float> attributes;
-     
-      public cardType type;
+        public Bitmap image;
+        public enum cardType
+        {
+            creature,
+            land,
+            instant,
+            sorcery,
+            enchantment,
+            artifact,
+            planeswalker,
+            battle,
+            invalid
+        };
+
+
+        public Dictionary<String, float> attributes;
+
+        public cardType type;
 
         public Card()
         {
@@ -42,15 +39,15 @@ namespace Draftsteel_Colossus
         //should be equal to the number of columns in the csv, -1.
         private static int numberOfAttributes = 17;
 
-      public List<String> combos_names;
-      public List<String> nonbos_names;
-      
-      public List<Card> combos;
-      public List<Card> nonbos;
+        public List<String> combos_names;
+        public List<String> nonbos_names;
+
+        public List<Card> combos;
+        public List<Card> nonbos;
 
 
 
-        public static List<Card> ReadInCards( String filepath)
+        public static List<Card> ReadInCards(String filepath)
         {
             using (TextFieldParser parser = new TextFieldParser(filepath))
             {
@@ -75,7 +72,7 @@ namespace Draftsteel_Colossus
 
                     //make a new var to hold the card
                     Card currentCard = null;
-                    
+
                     // Processing row
                     string[] fields = parser.ReadFields();
                     foreach (string field in fields)
@@ -112,18 +109,18 @@ namespace Draftsteel_Colossus
                                 else
                                 {
 
-                                        if (String.IsNullOrEmpty(field))
-                                        {
+                                    if (String.IsNullOrEmpty(field))
+                                    {
                                         //it's empty so just have it be 0
-                                            currentCard.attributes.Add(keys[rowItem], 0.0f);
+                                        currentCard.attributes.Add(keys[rowItem], 0.0f);
 
-                                        }
-                                        else 
-                                        {
+                                    }
+                                    else
+                                    {
                                         //add the float value from the csv into the corresponding key in this card's attributes
                                         currentCard.attributes.Add(keys[rowItem], float.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
 
-                                        }
+                                    }
                                 }
 
 
@@ -134,7 +131,7 @@ namespace Draftsteel_Colossus
                         if (rowItem == numberOfAttributes)
                         {
                             //the row should be ending.  Make sure numberOfAttributes is the number of coluimns -1
-                           //reset row item
+                            //reset row item
                             rowItem = 0;
 
                             if (firstRow)
@@ -148,7 +145,7 @@ namespace Draftsteel_Colossus
                                 allCardsList.Add(currentCard);
 
                             }
-                                                        
+
                         }
                         else
                         {
@@ -157,12 +154,10 @@ namespace Draftsteel_Colossus
                         }
                     }
                 }
-                
+
                 //should have all cards in the csv.
                 return allCardsList;
             }
-
-            
         }
     }
 }
