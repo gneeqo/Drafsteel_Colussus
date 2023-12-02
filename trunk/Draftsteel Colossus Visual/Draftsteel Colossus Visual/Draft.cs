@@ -8,7 +8,7 @@ using Draftsteel_Colossus_Visual;
 
 namespace Draftsteel_Colossus
 {
-    class Draft
+    public class Draft
     {
         public string cardsFileName = "";
         public string playersFileName = "";
@@ -19,6 +19,13 @@ namespace Draftsteel_Colossus
         int numPacks = 3;
         int numPicksPer = 1;
         int numCardsPer = 15;
+
+        public int currPack;
+        public int pick;
+        public int round;
+
+        private int startingPackIndex;
+        private bool started = false;
 
         List<Card> allCards;
 
@@ -52,7 +59,6 @@ namespace Draftsteel_Colossus
             // TODO: THIS IS TEMPORARY CARD DATA READING
             allCards = Card.ReadInCards(filename);
 
-          
         }
 
         void generatePacks()
@@ -146,8 +152,13 @@ namespace Draftsteel_Colossus
             winners[7].losses = 3;
         }
 
-        public void playDraft()
+        public void startDraft()
         {
+            if (started)
+                return;
+
+            started = true;
+
             // Read all the player data first
             readPlayerData(playersFileName);
 
@@ -156,34 +167,71 @@ namespace Draftsteel_Colossus
 
             // Generate all the packs
             generatePacks();
+        }
+
+        public bool nextPick()
+        {
+            ++pick;
+
+            // If the pick number is greater than the number of cards in a pack, reset it
+            if (pick >= numCardsPer)
+            {
+                return false;
+            }
+
+            for (int currPlayer = 0; currPlayer < allPlayers.Count; ++currPlayer)
+            {
+                // Determine which pack each player looks at
+                int packIndex = startingPackIndex + ((pick + currPlayer) % allPlayers.Count);
+                Booster currPack = allPacks[packIndex];
+
+                for (int j = 0; j < numPicksPer; ++j)
+                {
+                    // Player picks a card
+                    allPlayers[currPlayer].pickCard(currPack);
+                }
+            }
+
+            return true;
+        }
+
+        public void finishPack()
+        {
+            // Determines where the packs start
+            startingPackIndex = numPlayers * round;
+
+            // Run through each player and have them pick numPicksPer cards
+            while (allPacks[startingPackIndex].remainingCards.Count > 0)
+            {
+                // If next pick returns false, that means the next pack is ready
+                if(!nextPick())
+                {
+                    ++round;
+                    startingPackIndex = numPlayers * round;
+                    pick = -1;
+                    break;
+                }
+            }
+        }
+
+        public void finishDraft()
+        {
+            while(round < numPacks)
+            {
+                finishPack();
+            }
+        }
+
+        public void playDraft()
+        {
+            if(!started)
+                startDraft();
 
             // Run the draft!
             // Run through each pack round
-            for(int round = 0; round < numPacks; ++round)
+            for(round = 0; round < numPacks; ++round)
             {
-                // Determines where the packs start
-                int startingPackIndex = numPlayers * round;
-
-                int pick = -1;
-
-                // Run through each player and have them pick numPicksPer cards
-                while (allPacks[startingPackIndex].remainingCards.Count > 0)
-                {
-                    ++pick;
-                   
-                    for (int currPlayer = 0; currPlayer < allPlayers.Count; ++currPlayer)
-                    {
-                        // Determine which pack each player looks at
-                        int packIndex = startingPackIndex + ((pick + currPlayer) % allPlayers.Count);
-                        Booster currPack = allPacks[packIndex];
-
-                        for (int j = 0; j < numPicksPer; ++j)
-                        {
-                            // Player picks a card
-                            allPlayers[currPlayer].pickCard(currPack);
-                        }
-                    }
-                }
+                finishPack();
             }
 
             // Randomly assign winning statistics

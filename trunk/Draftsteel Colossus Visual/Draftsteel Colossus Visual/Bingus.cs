@@ -70,6 +70,8 @@ namespace Draftsteel_Colossus_Visual
         private void lb_MyLabel_Click(object sender, EventArgs e)
         {
             lb_MyLabel.Text = "Secret";
+            var newBingus = new Bingus();
+            newBingus.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

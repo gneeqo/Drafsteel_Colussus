@@ -31,9 +31,10 @@ namespace Draftsteel_Colossus_Visual
 
         private void btn_GenerateDraft_Click(object sender, EventArgs e)
         {
-
-
-            draft.playDraft();
+            // Close the current window and replace it with a visual draft window
+            var draftWindow = new Draft_Visual(draft);
+            this.Hide();
+            draftWindow.Show();
         }
 
         private void lv_CardFiles_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
