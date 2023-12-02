@@ -44,34 +44,15 @@ namespace Draftsteel_Colossus
 
         void readPlayerData(string filename)
         {
-            // TODO: THIS IS TEMPORARY PLAYER DATA READING
-            string[] playernames = File.ReadAllLines(filename);
-
-            for (int i = 0; i < playernames.Length; ++i)
-            {
-                Player currPlayer = new Player();
-                currPlayer.name = playernames[i];
-                allPlayers.Add(currPlayer);
-            }
+            allPlayers = Player.ReadInPlayers(filename);
         }
 
         void readCardData(string filename)
         {
             // TODO: THIS IS TEMPORARY CARD DATA READING
-            string[] cardnames = File.ReadAllLines(filename);
+            allCards = Card.ReadInCards(filename);
 
-            for(int i = 0; i < cardnames.Length; ++i)
-            {
-                Card currcard = new Card();
-                currcard.name = cardnames[i];
-
-                // Load the card's image
-                currcard.image = ScryfallAPI.GetCardImage(currcard.name);
-                if(currcard.image != null)
-                    currcard.image.Save("../../Images/" + currcard.name + ".jpg");
-
-                allCards.Add(currcard);
-            }
+          
         }
 
         void generatePacks()
@@ -101,7 +82,7 @@ namespace Draftsteel_Colossus
                     using (StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, p.name + "_" + timeStamp + ".txt"), true))
                     {
                         outputFile.WriteLine("Name: " + p.name);
-                        outputFile.WriteLine("Wins: " + p.wins + ", Losses: " + p.losses);
+                        outputFile.WriteLine("Wins: " +p.wins + ", Losses: " + +p.losses);
 
                         // Write each card name to the newly created text file
                         for (int i = 0; i < p.pool.Count; ++i)
