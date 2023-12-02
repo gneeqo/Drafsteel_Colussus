@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Draftsteel_Colossus;
 
 namespace Draftsteel_Colossus_Visual
 {
-    public partial class DraftVisual : Form
+    public partial class Draft_Visual : Form
     {
-        public DraftVisual()
+        private Draft draft;
+        public Draft_Visual(Draft _draft)
         {
+            draft = _draft;
             InitializeComponent();
+        }
+
+        private void Draft_Visual_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_StartDraft_Click(object sender, EventArgs e)
+        {
+            draft.playDraft();
         }
     }
 }
