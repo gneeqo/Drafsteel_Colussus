@@ -28,7 +28,7 @@ namespace Draftsteel_Colossus
         public Dictionary<String, float> attributes;
 
         public cardType type;
-
+        public float pickValue = 0.0f;
         public Card()
         {
             //init the dictionary
