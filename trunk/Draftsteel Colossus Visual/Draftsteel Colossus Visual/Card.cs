@@ -3,6 +3,7 @@ using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 
 namespace Draftsteel_Colossus
 {
@@ -37,7 +38,7 @@ namespace Draftsteel_Colossus
 
         //change this if you add attributes.
         //should be equal to the number of columns in the csv, -1.
-        private static int numberOfAttributes = 17;
+        private static int numberOfAttributes = 18;
 
         public List<String> combos_names;
         public List<String> nonbos_names;
@@ -91,6 +92,18 @@ namespace Draftsteel_Colossus
                                 //starting a new card, get its name correct
                                 currentCard = new Card();
                                 currentCard.name = field;
+
+
+                                //load the image into the card
+                                // Load the card's image
+                                if (!File.Exists("../../Images/" + currentCard.name + ".jpg"))
+                                {
+                                    currentCard.image = ScryfallAPI.GetCardImage(currentCard.name);
+                                }
+                                //put the image in the card class
+                                if (currentCard.image != null)
+                                    currentCard.image.Save("../../Images/" + currentCard.name + ".jpg");
+
                             }
                             else
                             {
