@@ -25,6 +25,8 @@ namespace Draftsteel_Colossus
 
         public List<Card> pool;
 
+
+        public Card lastPicked;
         //cards that have been seen and can't be considered by the bot
         List<Card> seen;
 
@@ -249,7 +251,7 @@ namespace Draftsteel_Colossus
             pack.remainingCards.Reverse();
             Card card = pack.pickCard(pack.remainingCards[0].name);
             pool.Add(card);
-
+            lastPicked = card;
             // TODO: Add to seen list
         }
     }
