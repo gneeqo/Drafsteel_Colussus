@@ -236,7 +236,7 @@
             this.lb_RoundCount.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RoundCount.Location = new System.Drawing.Point(32, 238);
             this.lb_RoundCount.Name = "lb_RoundCount";
-            this.lb_RoundCount.Size = new System.Drawing.Size(122, 32);
+            this.lb_RoundCount.Size = new System.Drawing.Size(129, 33);
             this.lb_RoundCount.TabIndex = 17;
             this.lb_RoundCount.Text = "Round: 0";
             // 
@@ -246,7 +246,7 @@
             this.lb_PickCount.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_PickCount.Location = new System.Drawing.Point(32, 278);
             this.lb_PickCount.Name = "lb_PickCount";
-            this.lb_PickCount.Size = new System.Drawing.Size(95, 32);
+            this.lb_PickCount.Size = new System.Drawing.Size(100, 33);
             this.lb_PickCount.TabIndex = 18;
             this.lb_PickCount.Text = "Pick: 0";
             // 
@@ -318,7 +318,7 @@
             // 
             // btn_ShowCards3
             // 
-            this.btn_ShowCards3.Font = new System.Drawing.Font("Beleren2016", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards3.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards3.Location = new System.Drawing.Point(1524, 40);
             this.btn_ShowCards3.Name = "btn_ShowCards3";
             this.btn_ShowCards3.Size = new System.Drawing.Size(139, 30);
