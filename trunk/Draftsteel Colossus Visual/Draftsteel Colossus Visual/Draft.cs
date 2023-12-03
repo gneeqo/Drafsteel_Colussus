@@ -261,6 +261,9 @@ namespace Draftsteel_Colossus
                 pick = 0;
             }
 
+            if (round >= numPacks)
+                return;
+
             // Run through each player and have them pick numPicksPer cards
             while (allPacks[startingPackIndex].remainingCards.Count > 0)
             {

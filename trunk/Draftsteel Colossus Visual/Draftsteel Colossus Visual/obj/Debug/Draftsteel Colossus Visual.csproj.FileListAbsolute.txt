@@ -39,3 +39,4 @@ C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Dra
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.pdb
 C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Draft_Visual.resources
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Draft_Visual.resources
+C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.PlayerPoolView.resources
