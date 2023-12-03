@@ -6,8 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Draftsteel_Colossus_Visual;
 
+
+
 namespace Draftsteel_Colossus
 {
+
     public 
     class Draft
     {
@@ -197,6 +200,54 @@ namespace Draftsteel_Colossus
             winners[7].losses = 3;
         }
 
+        public void adjustValues()
+        {
+            foreach (var player in allPlayers)
+            {
+                Dictionary<String, float> slurry = Player.AvgAttributes(player.pool);
+                
+                var keyOfMaxValue =
+                slurry.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                slurry.Remove("White");
+                slurry.Remove("Blue");
+                slurry.Remove("Black");
+                slurry.Remove("Red");
+                slurry.Remove("Green");
+                slurry.Remove("Value");
+                slurry.Remove("Infamy");
+
+                if (player.wins == 3)
+                {
+                    foreach (var card in player.pool)
+                    {
+                        //increase strongest archetype
+                        float amount = card.attributes[keyOfMaxValue];
+                        amount = Math.Min(Math.Max(amount + 0.05f, -1), 1);
+                        card.attributes[keyOfMaxValue] = amount;
+                    }
+                }
+                if (player.losses == 3)
+                {
+                    foreach (var card in player.pool)
+                    {
+                        //decrease strongest archetype
+                        float amount = card.attributes[keyOfMaxValue];
+                        amount = Math.Min(Math.Max(amount - 0.05f, -1), 1);
+                        card.attributes[keyOfMaxValue] = amount;
+                            
+                    }
+                }
+
+                foreach (var card in player.pool)
+                {
+                    //empty cards from the pool
+                    allCards.Add(card);
+                    player.pool.Remove(card);
+                }
+            }
+        }
+
         public void startDraft()
         {
             if (started)
@@ -288,8 +339,11 @@ namespace Draftsteel_Colossus
             // At this point, all packs have been drafted and each player has a pool of cards and a win/loss score
             // Output all of the cards that each player has to a .txt for now
             OutputPlayerData();
-            OutputCardData();
+
             // TODO: Using the players that won/lost, adjust the values in the table accordingly
+
+
+            OutputCardData();
         }
 
         public void playDraft()
