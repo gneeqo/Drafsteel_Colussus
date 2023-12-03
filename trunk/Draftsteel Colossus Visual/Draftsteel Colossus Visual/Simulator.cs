@@ -31,6 +31,12 @@ namespace Draftsteel_Colossus_Visual
 
         private void btn_GenerateDraft_Click(object sender, EventArgs e)
         {
+            if(draft.playersFileName == "" || draft.cardsFileName == "")
+            {
+                MessageBox.Show("Select card and player files before generating draft.", "File not selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             // Close the current window and replace it with a visual draft window
             var draftWindow = new Draft_Visual(draft);
             this.Hide();

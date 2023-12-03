@@ -1,15 +1,10 @@
-﻿using Draftsteel_Colossus_Visual;
-using Microsoft.VisualBasic.FileIO;
+﻿using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Draftsteel_Colossus.Card;
 
 namespace Draftsteel_Colossus
 {
+    public
     class Player
     {
         public string name;
@@ -78,118 +73,118 @@ namespace Draftsteel_Colossus
         }
 
         // these attributes are affected by player personality.
-        
+
         public Player()
         {
             pool = new List<Card>();
             seen = new List<Card>();
 
-            
+
             personality = new Dictionary<string, float>();
         }
 
 
         public static List<Player> ReadInPlayers(String filepath)
         {
-            
-                using (TextFieldParser parser = new TextFieldParser(filepath))
+
+            using (TextFieldParser parser = new TextFieldParser(filepath))
+            {
+                //the top row of the csv
+                var keys = new List<String>();
+
+                //what we will be returning
+                var allPlayersList = new List<Player>();
+
+                //should only be true for the first row(obviously)
+                //turn off after first row
+                bool firstRow = true;
+
+                //getting rows
+                parser.TextFieldType = FieldType.Delimited;
+                parser.SetDelimiters(",");
+                while (!parser.EndOfData)
                 {
-                    //the top row of the csv
-                    var keys = new List<String>();
 
-                    //what we will be returning
-                    var allPlayersList = new List<Player>();
+                    //which column are you in
+                    int rowItem = 0;
 
-                    //should only be true for the first row(obviously)
-                    //turn off after first row
-                    bool firstRow = true;
+                    //make a new var to hold the card
+                    Player currentPlayer = null;
 
-                    //getting rows
-                    parser.TextFieldType = FieldType.Delimited;
-                    parser.SetDelimiters(",");
-                    while (!parser.EndOfData)
+                    // Processing row
+                    string[] fields = parser.ReadFields();
+                    foreach (string field in fields)
                     {
 
-                        //which column are you in
-                        int rowItem = 0;
-
-                        //make a new var to hold the card
-                        Player currentPlayer = null;
-
-                        // Processing row
-                        string[] fields = parser.ReadFields();
-                        foreach (string field in fields)
+                        if (firstRow)
                         {
-
-                            if (firstRow)
+                            //we're in first row, so get the row keys
+                            keys.Add(field);
+                        }
+                        else
+                        {
+                            //name is a string, so needs to be done separately
+                            if (keys[rowItem] == "Name")
                             {
-                                //we're in first row, so get the row keys
-                                keys.Add(field);
+                                //starting a new player, get its name correct
+                                currentPlayer = new Player();
+                                currentPlayer.name = field;
+
                             }
                             else
                             {
-                                //name is a string, so needs to be done separately
-                                if (keys[rowItem] == "Name")
-                                {
-                                    //starting a new player, get its name correct
-                                    currentPlayer = new Player();
-                                    currentPlayer.name = field;
 
-                                }
-                                else
-                                {
-                                    
 
-                                    if (String.IsNullOrEmpty(field))
-                                    {
+                                if (String.IsNullOrEmpty(field))
+                                {
                                     //it's empty so just have it be 0
                                     currentPlayer.personality.Add(keys[rowItem], 0.0f);
 
-                                    }
-                                    else
-                                    {
-                                    //add the float value from the csv into the corresponding key in this player's personality
-                                    currentPlayer.personality.Add(keys[rowItem], float.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
-
-                                    }
-                                    
-
-
-
-                                }
-                            }
-
-                            if (rowItem == numberOfAttributes)
-                            {
-                                //the row should be ending.  Make sure numberOfAttributes is the number of coluimns -1
-                                //reset row item
-                                rowItem = 0;
-
-                                if (firstRow)
-                                {
-                                    //we're never in first row again.
-                                    firstRow = false;
                                 }
                                 else
                                 {
-                                    //add the finished player 
-                                    allPlayersList.Add(currentPlayer);
+                                    //add the float value from the csv into the corresponding key in this player's personality
+                                    currentPlayer.personality.Add(keys[rowItem], float.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
 
                                 }
 
+
+
+
+                            }
+                        }
+
+                        if (rowItem == numberOfAttributes)
+                        {
+                            //the row should be ending.  Make sure numberOfAttributes is the number of coluimns -1
+                            //reset row item
+                            rowItem = 0;
+
+                            if (firstRow)
+                            {
+                                //we're never in first row again.
+                                firstRow = false;
                             }
                             else
                             {
-                                //move to the next column
-                                rowItem++;
+                                //add the finished player 
+                                allPlayersList.Add(currentPlayer);
+
                             }
+
+                        }
+                        else
+                        {
+                            //move to the next column
+                            rowItem++;
                         }
                     }
-
-                    //should have all players in the csv.
-                    return allPlayersList;
                 }
-            
+
+                //should have all players in the csv.
+                return allPlayersList;
+            }
+
         }
 
 

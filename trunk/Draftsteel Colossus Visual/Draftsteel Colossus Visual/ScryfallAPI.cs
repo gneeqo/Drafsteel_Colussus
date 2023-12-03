@@ -22,7 +22,7 @@ namespace Draftsteel_Colossus_Visual
         }
 
         // THANK YOU PROFESSOR HALL FOR HELPING ME WITH THE API STUFF
-        private static async Task<Bitmap> APICall(string URL)
+        private static Bitmap APICall(string URL)
         {
             var cardRequest = new HttpRequestMessage(HttpMethod.Get, URL);
             var cardResponse = client.SendAsync(cardRequest);
@@ -82,7 +82,7 @@ namespace Draftsteel_Colossus_Visual
             Thread.Sleep(50);
 
             string cardURL = URL + cardname;
-            Bitmap cardimage = APICall(cardURL).Result;
+            Bitmap cardimage = APICall(cardURL);
 
             return cardimage;
         }

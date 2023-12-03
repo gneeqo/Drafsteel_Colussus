@@ -8,7 +8,8 @@ using Draftsteel_Colossus_Visual;
 
 namespace Draftsteel_Colossus
 {
-    public class Draft
+    public 
+    class Draft
     {
         public string cardsFileName = "";
         public string playersFileName = "";
@@ -31,7 +32,7 @@ namespace Draftsteel_Colossus
 
         List<Booster> allPacks;
 
-        List<Player> allPlayers;
+        public List<Player> allPlayers;
             
         public Draft()
         {
@@ -171,13 +172,16 @@ namespace Draftsteel_Colossus
 
         public bool nextPick()
         {
-            ++pick;
-
             // If the pick number is greater than the number of cards in a pack, reset it
             if (pick >= numCardsPer)
             {
-                return false;
+                ++round;
+                startingPackIndex = numPlayers * round;
+                pick = 0;
             }
+
+            if (round >= numPacks)
+                return false;
 
             for (int currPlayer = 0; currPlayer < allPlayers.Count; ++currPlayer)
             {
@@ -192,13 +196,26 @@ namespace Draftsteel_Colossus
                 }
             }
 
+            ++pick;
+
             return true;
         }
 
         public void finishPack()
         {
+            if (round >= numPacks)
+                return;
+
             // Determines where the packs start
             startingPackIndex = numPlayers * round;
+
+            // If the pack is empty, start a new pack
+            if(allPacks[startingPackIndex].remainingCards.Count <= 0)
+            {
+                ++round;
+                startingPackIndex = numPlayers * round;
+                pick = 0;
+            }
 
             // Run through each player and have them pick numPicksPer cards
             while (allPacks[startingPackIndex].remainingCards.Count > 0)
@@ -206,9 +223,6 @@ namespace Draftsteel_Colossus
                 // If next pick returns false, that means the next pack is ready
                 if(!nextPick())
                 {
-                    ++round;
-                    startingPackIndex = numPlayers * round;
-                    pick = -1;
                     break;
                 }
             }
@@ -220,6 +234,15 @@ namespace Draftsteel_Colossus
             {
                 finishPack();
             }
+
+            // Randomly assign winning statistics
+            AssignWinningStatistics();
+
+            // At this point, all packs have been drafted and each player has a pool of cards and a win/loss score
+            // Output all of the cards that each player has to a .txt for now
+            OutputPlayerData();
+
+            // TODO: Using the players that won/lost, adjust the values in the table accordingly
         }
 
         public void playDraft()
@@ -234,15 +257,8 @@ namespace Draftsteel_Colossus
                 finishPack();
             }
 
-            // Randomly assign winning statistics
-            AssignWinningStatistics();
-
-            // At this point, all packs have been drafted and each player has a pool of cards and a win/loss score
-            // Output all of the cards that each player has to a .txt for now
-            OutputPlayerData();
-
-            // TODO: Using the players that won/lost, adjust the values in the table accordingly
-
+            // Finish any packs remaining, assign winners, and output player and learning data
+            finishDraft();
         }
     }
 }
