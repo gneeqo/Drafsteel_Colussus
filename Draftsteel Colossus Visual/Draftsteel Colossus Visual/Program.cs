@@ -15,6 +15,8 @@ namespace Draftsteel_Colossus_Visual
         [STAThread]
         static void Main()
         {
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Simulator());

@@ -236,7 +236,7 @@
             this.lb_RoundCount.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RoundCount.Location = new System.Drawing.Point(32, 238);
             this.lb_RoundCount.Name = "lb_RoundCount";
-            this.lb_RoundCount.Size = new System.Drawing.Size(153, 40);
+            this.lb_RoundCount.Size = new System.Drawing.Size(122, 32);
             this.lb_RoundCount.TabIndex = 17;
             this.lb_RoundCount.Text = "Round: 0";
             // 
@@ -246,7 +246,7 @@
             this.lb_PickCount.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_PickCount.Location = new System.Drawing.Point(32, 278);
             this.lb_PickCount.Name = "lb_PickCount";
-            this.lb_PickCount.Size = new System.Drawing.Size(119, 40);
+            this.lb_PickCount.Size = new System.Drawing.Size(95, 32);
             this.lb_PickCount.TabIndex = 18;
             this.lb_PickCount.Text = "Pick: 0";
             // 
@@ -285,7 +285,7 @@
             // 
             // btn_ShowCards0
             // 
-            this.btn_ShowCards0.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards0.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards0.Location = new System.Drawing.Point(437, 40);
             this.btn_ShowCards0.Name = "btn_ShowCards0";
             this.btn_ShowCards0.Size = new System.Drawing.Size(139, 30);
@@ -296,7 +296,7 @@
             // 
             // btn_ShowCards1
             // 
-            this.btn_ShowCards1.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards1.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards1.Location = new System.Drawing.Point(792, 40);
             this.btn_ShowCards1.Name = "btn_ShowCards1";
             this.btn_ShowCards1.Size = new System.Drawing.Size(139, 30);
@@ -307,7 +307,7 @@
             // 
             // btn_ShowCards2
             // 
-            this.btn_ShowCards2.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards2.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards2.Location = new System.Drawing.Point(1161, 40);
             this.btn_ShowCards2.Name = "btn_ShowCards2";
             this.btn_ShowCards2.Size = new System.Drawing.Size(139, 30);
@@ -318,60 +318,66 @@
             // 
             // btn_ShowCards3
             // 
-            this.btn_ShowCards3.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards3.Font = new System.Drawing.Font("Beleren2016", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards3.Location = new System.Drawing.Point(1524, 40);
             this.btn_ShowCards3.Name = "btn_ShowCards3";
             this.btn_ShowCards3.Size = new System.Drawing.Size(139, 30);
             this.btn_ShowCards3.TabIndex = 25;
             this.btn_ShowCards3.Text = "Show Card Pool";
             this.btn_ShowCards3.UseVisualStyleBackColor = true;
+            this.btn_ShowCards3.Click += new System.EventHandler(this.btn_ShowCards3_Click);
             // 
             // btn_ShowCards4
             // 
-            this.btn_ShowCards4.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards4.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards4.Location = new System.Drawing.Point(437, 500);
             this.btn_ShowCards4.Name = "btn_ShowCards4";
             this.btn_ShowCards4.Size = new System.Drawing.Size(139, 30);
             this.btn_ShowCards4.TabIndex = 26;
             this.btn_ShowCards4.Text = "Show Card Pool";
             this.btn_ShowCards4.UseVisualStyleBackColor = true;
+            this.btn_ShowCards4.Click += new System.EventHandler(this.btn_ShowCards4_Click);
             // 
             // btn_ShowCards5
             // 
-            this.btn_ShowCards5.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards5.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards5.Location = new System.Drawing.Point(792, 500);
             this.btn_ShowCards5.Name = "btn_ShowCards5";
             this.btn_ShowCards5.Size = new System.Drawing.Size(139, 30);
             this.btn_ShowCards5.TabIndex = 27;
             this.btn_ShowCards5.Text = "Show Card Pool";
             this.btn_ShowCards5.UseVisualStyleBackColor = true;
+            this.btn_ShowCards5.Click += new System.EventHandler(this.btn_ShowCards5_Click);
             // 
             // btn_ShowCards6
             // 
-            this.btn_ShowCards6.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards6.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards6.Location = new System.Drawing.Point(1161, 500);
             this.btn_ShowCards6.Name = "btn_ShowCards6";
             this.btn_ShowCards6.Size = new System.Drawing.Size(139, 30);
             this.btn_ShowCards6.TabIndex = 28;
             this.btn_ShowCards6.Text = "Show Card Pool";
             this.btn_ShowCards6.UseVisualStyleBackColor = true;
+            this.btn_ShowCards6.Click += new System.EventHandler(this.btn_ShowCards6_Click);
             // 
             // btn_ShowCards7
             // 
-            this.btn_ShowCards7.Font = new System.Drawing.Font("Beleren2016", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowCards7.Font = new System.Drawing.Font("Beleren2016", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowCards7.Location = new System.Drawing.Point(1524, 500);
             this.btn_ShowCards7.Name = "btn_ShowCards7";
             this.btn_ShowCards7.Size = new System.Drawing.Size(139, 30);
             this.btn_ShowCards7.TabIndex = 29;
             this.btn_ShowCards7.Text = "Show Card Pool";
             this.btn_ShowCards7.UseVisualStyleBackColor = true;
+            this.btn_ShowCards7.Click += new System.EventHandler(this.btn_ShowCards7_Click);
             // 
             // Draft_Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1507, 867);
+            this.ClientSize = new System.Drawing.Size(1743, 915);
             this.Controls.Add(this.btn_ShowCards7);
             this.Controls.Add(this.btn_ShowCards6);
             this.Controls.Add(this.btn_ShowCards5);
