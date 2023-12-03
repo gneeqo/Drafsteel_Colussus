@@ -16,7 +16,7 @@ namespace Draftsteel_Colossus
         //should be equal to the number of columns in the csv, -1.
         private static int numberOfAttributes = 16;
 
-        public Dictionary<string, float> personality;
+        public Dictionary<string, double> personality;
 
         public List<Card> pool;
 
@@ -26,9 +26,9 @@ namespace Draftsteel_Colossus
         List<Card> seen;
 
 
-        public static Dictionary<String, float> AvgAttributes(List<Card> poolToEvaluate)
+        public static Dictionary<String, double> AvgAttributes(List<Card> poolToEvaluate)
         {
-            var averagedAttributes = new Dictionary<String, float>();
+            var averagedAttributes = new Dictionary<String, double>();
             int numOfAttributes = 0;
             bool countAttributes = true;
             foreach (Card currentCard in poolToEvaluate)
@@ -38,19 +38,14 @@ namespace Draftsteel_Colossus
                     if (countAttributes) numOfAttributes++;
                     if (averagedAttributes.ContainsKey(item.Key))
                     {
-                        if (item.Value != 0)
-                        {
-                            //multiply by the new value
+                        double modifier = item.Value;
+                        double initial = averagedAttributes[item.Key];
+                        
+                        
 
-                            float initial = averagedAttributes[item.Key];
-                            float modifier = item.Value;
+                        double final = (initial + modifier);
 
-                            float final = (initial * modifier);
-
-                            averagedAttributes[item.Key] = final;
-
-                        }
-
+                        averagedAttributes[item.Key] = final;
 
                     }
                     else
@@ -62,11 +57,14 @@ namespace Draftsteel_Colossus
 
                 countAttributes = false;
             }
-            var finalDict = new Dictionary<String, float>();
+            var finalDict = new Dictionary<String, double>();
             foreach (var item in averagedAttributes)
             {
                 //actually do go mean
-                finalDict.Add(item.Key, (float)Math.Pow(item.Value, 1 / numOfAttributes));
+                
+                double rawVal = item.Value;
+                finalDict.Add(item.Key, rawVal/poolToEvaluate.Count);
+                
             }
             return finalDict;
 
@@ -80,7 +78,7 @@ namespace Draftsteel_Colossus
             seen = new List<Card>();
 
 
-            personality = new Dictionary<string, float>();
+            personality = new Dictionary<string, double>();
         }
 
 
@@ -143,8 +141,8 @@ namespace Draftsteel_Colossus
                                 }
                                 else
                                 {
-                                    //add the float value from the csv into the corresponding key in this player's personality
-                                    currentPlayer.personality.Add(keys[rowItem], float.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
+                                    //add the double value from the csv into the corresponding key in this player's personality
+                                    currentPlayer.personality.Add(keys[rowItem], double.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
 
                                 }
 
@@ -189,13 +187,13 @@ namespace Draftsteel_Colossus
 
 
 
-        public float CalculateBonusValue(Card input)
+        public double CalculateBonusValue(Card input)
         {
 
 
             var attributes = input.attributes;
-            float value = attributes["Value"];
-            float infamy = attributes["Infamy"];
+            double value = attributes["Value"];
+            double infamy = attributes["Infamy"];
 
             //this calculation should probably be more nuanced.
 
@@ -221,9 +219,9 @@ namespace Draftsteel_Colossus
                     //don't consider value or infamy until later
                     if (item.Key != "value" || item.Key != "infamy")
                     {
-                        float cardvalue = item.Value;
-                        float poolvalue = 0;
-                        float personalvalue = 0;
+                        double cardvalue = item.Value;
+                        double poolvalue = 0;
+                        double personalvalue = 0;
 
                         if (poolAttributes.ContainsKey(item.Key))
                         {

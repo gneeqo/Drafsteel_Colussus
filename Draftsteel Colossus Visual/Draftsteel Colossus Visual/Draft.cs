@@ -110,46 +110,51 @@ namespace Draftsteel_Colossus
 
         void OutputCardData()
         {
+
+            emptyPools();
             String timeStamp = GetTimestamp(DateTime.Now);
             
-            StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, "ExportedCardData" + "_" + timeStamp + ".csv"));
-            
-           
-            
+                      
             
             int column = 0;
-            
-            //writing the column headers
-            var exampleCard = allCards[0];
-            foreach (var item in exampleCard.attributes)
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, "ExportedCardData" + "_" + timeStamp + ".csv")))
             {
-                using (outputFile)
+                outputFile.Write("Name");
+                outputFile.Write(",");
+                //writing the column headers
+                var exampleCard = allCards[0];
+                foreach (var item in exampleCard.attributes)
                 {
+
                     outputFile.Write(item.Key);
                     if (column != Card.numberOfAttributes)
                     {
                         outputFile.Write(",");
                     }
-                }
-                column++;
-            }
-            outputFile.WriteLine();
-            
-            foreach (Card currCard in allCards)
-            {
-                column = 0;
-                foreach (var item in currCard.attributes)
-                {
-                    outputFile.Write(item.Value);
-                    if (column != Card.numberOfAttributes)
-                    {
-                        outputFile.Write(",");
-                    }
-                    
+
                     column++;
                 }
                 outputFile.WriteLine();
+
+                foreach (Card currCard in allCards)
+                {
+                    outputFile.Write(currCard.name);
+                    outputFile.Write(",");
+                    column = 0;
+                    foreach (var item in currCard.attributes)
+                    {
+                        outputFile.Write(item.Value);
+                        if (column != Card.numberOfAttributes)
+                        {
+                            outputFile.Write(",");
+                        }
+
+                        column++;
+                    }
+                    outputFile.WriteLine();
+                }
             }
+                
         }
 
         // Simple random shuffle function, just does n random swaps
@@ -200,14 +205,27 @@ namespace Draftsteel_Colossus
             winners[7].losses = 3;
         }
 
+        public void emptyPools() 
+        {
+            foreach (Player player in allPlayers)
+            {
+                foreach (var card in player.pool)
+                {
+                    //empty cards from the pool
+                    allCards.Add(card);
+
+                }
+                player.pool.Clear();
+            }
+        }
+
         public void adjustValues()
         {
             foreach (var player in allPlayers)
             {
-                Dictionary<String, float> slurry = Player.AvgAttributes(player.pool);
+                Dictionary<String, double> slurry = Player.AvgAttributes(player.pool);
                 
-                var keyOfMaxValue =
-                slurry.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+               
 
                 slurry.Remove("White");
                 slurry.Remove("Blue");
@@ -217,12 +235,15 @@ namespace Draftsteel_Colossus
                 slurry.Remove("Value");
                 slurry.Remove("Infamy");
 
+                var keyOfMaxValue =
+               slurry.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
                 if (player.wins == 3)
                 {
                     foreach (var card in player.pool)
                     {
                         //increase strongest archetype
-                        float amount = card.attributes[keyOfMaxValue];
+                        double amount = card.attributes[keyOfMaxValue];
                         amount = Math.Min(Math.Max(amount + 0.05f, -1), 1);
                         card.attributes[keyOfMaxValue] = amount;
                     }
@@ -232,19 +253,14 @@ namespace Draftsteel_Colossus
                     foreach (var card in player.pool)
                     {
                         //decrease strongest archetype
-                        float amount = card.attributes[keyOfMaxValue];
+                        double amount = card.attributes[keyOfMaxValue];
                         amount = Math.Min(Math.Max(amount - 0.05f, -1), 1);
                         card.attributes[keyOfMaxValue] = amount;
                             
                     }
                 }
 
-                foreach (var card in player.pool)
-                {
-                    //empty cards from the pool
-                    allCards.Add(card);
-                    player.pool.Remove(card);
-                }
+                
             }
         }
 
@@ -341,9 +357,9 @@ namespace Draftsteel_Colossus
             OutputPlayerData();
 
             // TODO: Using the players that won/lost, adjust the values in the table accordingly
+            adjustValues();
 
-
-            OutputCardData();
+            //OutputCardData();
         }
 
         public void playDraft()
