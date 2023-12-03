@@ -48,7 +48,7 @@ namespace Draftsteel_Colossus
         public List<Card> nonbos;
 
 
-
+       
         public static List<Card> ReadInCards(String filepath)
         {
             using (TextFieldParser parser = new TextFieldParser(filepath))
