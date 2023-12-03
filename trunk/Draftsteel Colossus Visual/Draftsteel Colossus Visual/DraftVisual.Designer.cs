@@ -59,6 +59,14 @@
             this.btn_ShowCards6 = new System.Windows.Forms.Button();
             this.btn_ShowCards7 = new System.Windows.Forms.Button();
             this.btn_OutputCardData = new System.Windows.Forms.Button();
+            this.lb_Wins0 = new System.Windows.Forms.Label();
+            this.lb_Wins1 = new System.Windows.Forms.Label();
+            this.lb_Wins2 = new System.Windows.Forms.Label();
+            this.lb_Wins3 = new System.Windows.Forms.Label();
+            this.lb_Wins4 = new System.Windows.Forms.Label();
+            this.lb_Wins5 = new System.Windows.Forms.Label();
+            this.lb_Wins6 = new System.Windows.Forms.Label();
+            this.lb_Wins7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player3)).BeginInit();
@@ -383,6 +391,86 @@
             this.btn_OutputCardData.UseVisualStyleBackColor = true;
             this.btn_OutputCardData.Click += new System.EventHandler(this.btn_OutputCardData_Click);
             // 
+            // lb_Wins0
+            // 
+            this.lb_Wins0.AutoSize = true;
+            this.lb_Wins0.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins0.Location = new System.Drawing.Point(466, 413);
+            this.lb_Wins0.Name = "lb_Wins0";
+            this.lb_Wins0.Size = new System.Drawing.Size(74, 30);
+            this.lb_Wins0.TabIndex = 31;
+            this.lb_Wins0.Text = "Wins:";
+            // 
+            // lb_Wins1
+            // 
+            this.lb_Wins1.AutoSize = true;
+            this.lb_Wins1.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins1.Location = new System.Drawing.Point(823, 413);
+            this.lb_Wins1.Name = "lb_Wins1";
+            this.lb_Wins1.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins1.TabIndex = 32;
+            this.lb_Wins1.Text = "Wins:";
+            // 
+            // lb_Wins2
+            // 
+            this.lb_Wins2.AutoSize = true;
+            this.lb_Wins2.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins2.Location = new System.Drawing.Point(1209, 413);
+            this.lb_Wins2.Name = "lb_Wins2";
+            this.lb_Wins2.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins2.TabIndex = 33;
+            this.lb_Wins2.Text = "Wins:";
+            // 
+            // lb_Wins3
+            // 
+            this.lb_Wins3.AutoSize = true;
+            this.lb_Wins3.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins3.Location = new System.Drawing.Point(1569, 419);
+            this.lb_Wins3.Name = "lb_Wins3";
+            this.lb_Wins3.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins3.TabIndex = 34;
+            this.lb_Wins3.Text = "Wins:";
+            // 
+            // lb_Wins4
+            // 
+            this.lb_Wins4.AutoSize = true;
+            this.lb_Wins4.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins4.Location = new System.Drawing.Point(468, 882);
+            this.lb_Wins4.Name = "lb_Wins4";
+            this.lb_Wins4.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins4.TabIndex = 35;
+            this.lb_Wins4.Text = "Wins:";
+            // 
+            // lb_Wins5
+            // 
+            this.lb_Wins5.AutoSize = true;
+            this.lb_Wins5.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins5.Location = new System.Drawing.Point(823, 882);
+            this.lb_Wins5.Name = "lb_Wins5";
+            this.lb_Wins5.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins5.TabIndex = 36;
+            this.lb_Wins5.Text = "Wins:";
+            // 
+            // lb_Wins6
+            // 
+            this.lb_Wins6.AutoSize = true;
+            this.lb_Wins6.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins6.Location = new System.Drawing.Point(1209, 882);
+            this.lb_Wins6.Name = "lb_Wins6";
+            this.lb_Wins6.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins6.TabIndex = 37;
+            this.lb_Wins6.Text = "Wins:";
+            // 
+            // lb_Wins7
+            // 
+            this.lb_Wins7.AutoSize = true;
+            this.lb_Wins7.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Wins7.Location = new System.Drawing.Point(1569, 882);
+            this.lb_Wins7.Name = "lb_Wins7";
+            this.lb_Wins7.Size = new System.Drawing.Size(59, 24);
+            this.lb_Wins7.TabIndex = 38;
+            this.lb_Wins7.Text = "Wins:";
+            // 
             // Draft_Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,6 +478,14 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1743, 915);
+            this.Controls.Add(this.lb_Wins7);
+            this.Controls.Add(this.lb_Wins6);
+            this.Controls.Add(this.lb_Wins5);
+            this.Controls.Add(this.lb_Wins4);
+            this.Controls.Add(this.lb_Wins3);
+            this.Controls.Add(this.lb_Wins2);
+            this.Controls.Add(this.lb_Wins1);
+            this.Controls.Add(this.lb_Wins0);
             this.Controls.Add(this.btn_OutputCardData);
             this.Controls.Add(this.btn_ShowCards7);
             this.Controls.Add(this.btn_ShowCards6);
@@ -470,5 +566,13 @@
         private System.Windows.Forms.Button btn_ShowCards6;
         private System.Windows.Forms.Button btn_ShowCards7;
         private System.Windows.Forms.Button btn_OutputCardData;
+        private System.Windows.Forms.Label lb_Wins0;
+        private System.Windows.Forms.Label lb_Wins1;
+        private System.Windows.Forms.Label lb_Wins2;
+        private System.Windows.Forms.Label lb_Wins3;
+        private System.Windows.Forms.Label lb_Wins4;
+        private System.Windows.Forms.Label lb_Wins5;
+        private System.Windows.Forms.Label lb_Wins6;
+        private System.Windows.Forms.Label lb_Wins7;
     }
 }

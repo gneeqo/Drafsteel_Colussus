@@ -13,6 +13,7 @@ namespace Draftsteel_Colossus_Visual
         // Keep a list of all the player labels and images
         List<PictureBox> playerImages = new List<PictureBox>();
         List<Label> playerLabels = new List<Label>();
+        List<Label> winLabels = new List<Label>();
 
         public Draft_Visual(Draft _draft)
         {
@@ -37,6 +38,21 @@ namespace Draftsteel_Colossus_Visual
             playerLabels.Add(lb_Player5);
             playerLabels.Add(lb_Player6);
             playerLabels.Add(lb_Player7);
+
+            winLabels.Add(lb_Wins0);
+            winLabels.Add(lb_Wins1);
+            winLabels.Add(lb_Wins2);
+            winLabels.Add(lb_Wins3);
+            winLabels.Add(lb_Wins4);
+            winLabels.Add(lb_Wins5);
+            winLabels.Add(lb_Wins6);
+            winLabels.Add(lb_Wins7);
+
+            // Hide the winLabels for now
+            foreach(var l in winLabels)
+            {
+                l.Hide();
+            }
 
             // Hide all of the buttons except the start draft button to start
             btn_NextPick.Hide();
@@ -144,6 +160,13 @@ namespace Draftsteel_Colossus_Visual
 
             // Show the output data button
             btn_OutputCardData.Show();
+
+            // Update and show the wins labels
+            for(int i = 0; i < winLabels.Count; ++i)
+            {
+                winLabels[i].Text = $"Wins: {draft.allPlayers[i].wins}, Losses: {draft.allPlayers[i].losses}";
+                winLabels[i].Show();
+            }
         }
 
         #region CardPoolVisuals
