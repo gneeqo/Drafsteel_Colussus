@@ -204,8 +204,8 @@ namespace Draftsteel_Colossus
 
             //this calculation should probably be more nuanced.
 
-            value *= (personality["LikesValue"] + 1);
-            infamy *= (personality["LikesInfamy"] + 1);
+            value *= (personality["Value"] + 1);
+            infamy *= (personality["Infamy"] + 1);
 
             return value + infamy;
 
@@ -228,17 +228,22 @@ namespace Draftsteel_Colossus
                     {
                         float cardvalue = item.Value;
                         float poolvalue = 0;
+                        float personalvalue = 0;
 
                         if (poolAttributes.ContainsKey(item.Key))
                         {
                             poolvalue = poolAttributes[item.Key];
+                        }
+                        if (personality.ContainsKey(item.Key))
+                        {
+                            personalvalue = personality[item.Key];
                         }
                         //add value based on compatibility with the pool
                         //e.g. if an attribute is 1 in the pool and 1 in the card,
                         //1.0 value will be added.
                         //if the attribute is 0.5 in the pool and 1 in the card,
                         //0.5 value will be added
-                        currentCard.pickValue += (cardvalue * poolvalue);
+                        currentCard.pickValue += (cardvalue * poolvalue) + (cardvalue*personalvalue);
 
                     }
 

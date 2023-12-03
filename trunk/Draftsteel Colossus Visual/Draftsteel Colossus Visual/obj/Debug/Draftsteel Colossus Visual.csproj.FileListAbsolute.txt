@@ -30,7 +30,6 @@ C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Dra
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\bin\Debug\Newtonsoft.Json.xml
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.csproj.AssemblyReference.cache
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Bingus.resources
-C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.DraftVisual.resources
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Properties.Resources.resources
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Simulator.resources
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.csproj.GenerateResource.cache
@@ -39,3 +38,4 @@ C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Dra
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.exe
 C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel Colossus Visual.pdb
 C:\Users\leoni\Desktop\Run The Mox SVN\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Draft_Visual.resources
+C:\Users\nicol\OneDrive\Desktop\RUN THE MOX\trunk\Draftsteel Colossus Visual\Draftsteel Colossus Visual\obj\Debug\Draftsteel_Colossus_Visual.Draft_Visual.resources
