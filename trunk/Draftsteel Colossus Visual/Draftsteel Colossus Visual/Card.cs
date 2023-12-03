@@ -27,19 +27,19 @@ namespace Draftsteel_Colossus
         };
 
 
-        public Dictionary<String, float> attributes;
+        public Dictionary<String, double> attributes;
 
         public cardType type;
-        public float pickValue = 0.0f;
+        public double pickValue = 0.0f;
         public Card()
         {
             //init the dictionary
-            attributes = new Dictionary<string, float>();
+            attributes = new Dictionary<string, double>();
         }
 
         //change this if you add attributes.
         //should be equal to the number of columns in the csv, -1.
-        public static int numberOfAttributes = 18;
+        public static int numberOfAttributes = 17;
 
         public List<String> combos_names;
         public List<String> nonbos_names;
@@ -139,8 +139,8 @@ namespace Draftsteel_Colossus
                                     }
                                     else
                                     {
-                                        //add the float value from the csv into the corresponding key in this card's attributes
-                                        currentCard.attributes.Add(keys[rowItem], float.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
+                                        //add the double value from the csv into the corresponding key in this card's attributes
+                                        currentCard.attributes.Add(keys[rowItem], double.Parse(field, System.Globalization.CultureInfo.InvariantCulture));
 
                                     }
                                 }
