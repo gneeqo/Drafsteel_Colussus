@@ -58,6 +58,7 @@
             this.btn_ShowCards5 = new System.Windows.Forms.Button();
             this.btn_ShowCards6 = new System.Windows.Forms.Button();
             this.btn_ShowCards7 = new System.Windows.Forms.Button();
+            this.btn_OutputCardData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player3)).BeginInit();
@@ -255,7 +256,7 @@
             this.btn_NextPick.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NextPick.Location = new System.Drawing.Point(33, 351);
             this.btn_NextPick.Name = "btn_NextPick";
-            this.btn_NextPick.Size = new System.Drawing.Size(241, 129);
+            this.btn_NextPick.Size = new System.Drawing.Size(241, 80);
             this.btn_NextPick.TabIndex = 19;
             this.btn_NextPick.Text = "Next Pick";
             this.btn_NextPick.UseVisualStyleBackColor = true;
@@ -264,9 +265,9 @@
             // btn_NextPack
             // 
             this.btn_NextPack.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NextPack.Location = new System.Drawing.Point(34, 506);
+            this.btn_NextPack.Location = new System.Drawing.Point(33, 451);
             this.btn_NextPack.Name = "btn_NextPack";
-            this.btn_NextPack.Size = new System.Drawing.Size(241, 129);
+            this.btn_NextPack.Size = new System.Drawing.Size(241, 79);
             this.btn_NextPack.TabIndex = 20;
             this.btn_NextPack.Text = "Next Booster";
             this.btn_NextPack.UseVisualStyleBackColor = true;
@@ -275,9 +276,9 @@
             // btn_FinishDraft
             // 
             this.btn_FinishDraft.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_FinishDraft.Location = new System.Drawing.Point(33, 664);
+            this.btn_FinishDraft.Location = new System.Drawing.Point(34, 551);
             this.btn_FinishDraft.Name = "btn_FinishDraft";
-            this.btn_FinishDraft.Size = new System.Drawing.Size(241, 129);
+            this.btn_FinishDraft.Size = new System.Drawing.Size(241, 76);
             this.btn_FinishDraft.TabIndex = 21;
             this.btn_FinishDraft.Text = "Finish Draft";
             this.btn_FinishDraft.UseVisualStyleBackColor = true;
@@ -371,6 +372,17 @@
             this.btn_ShowCards7.UseVisualStyleBackColor = true;
             this.btn_ShowCards7.Click += new System.EventHandler(this.btn_ShowCards7_Click);
             // 
+            // btn_OutputCardData
+            // 
+            this.btn_OutputCardData.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_OutputCardData.Location = new System.Drawing.Point(38, 721);
+            this.btn_OutputCardData.Name = "btn_OutputCardData";
+            this.btn_OutputCardData.Size = new System.Drawing.Size(235, 70);
+            this.btn_OutputCardData.TabIndex = 30;
+            this.btn_OutputCardData.Text = "Output Card Data";
+            this.btn_OutputCardData.UseVisualStyleBackColor = true;
+            this.btn_OutputCardData.Click += new System.EventHandler(this.btn_OutputCardData_Click);
+            // 
             // Draft_Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -378,6 +390,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1743, 915);
+            this.Controls.Add(this.btn_OutputCardData);
             this.Controls.Add(this.btn_ShowCards7);
             this.Controls.Add(this.btn_ShowCards6);
             this.Controls.Add(this.btn_ShowCards5);
@@ -456,5 +469,6 @@
         private System.Windows.Forms.Button btn_ShowCards5;
         private System.Windows.Forms.Button btn_ShowCards6;
         private System.Windows.Forms.Button btn_ShowCards7;
+        private System.Windows.Forms.Button btn_OutputCardData;
     }
 }

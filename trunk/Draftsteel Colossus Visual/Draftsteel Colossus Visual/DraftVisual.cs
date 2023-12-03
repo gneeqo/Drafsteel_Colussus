@@ -42,6 +42,8 @@ namespace Draftsteel_Colossus_Visual
             btn_NextPick.Hide();
             btn_NextPack.Hide();
             btn_FinishDraft.Hide();
+
+            btn_OutputCardData.Hide();
         }
 
         private void Draft_Visual_Load(object sender, EventArgs e)
@@ -139,8 +141,12 @@ namespace Draftsteel_Colossus_Visual
             draft.finishDraft();
             UpdateDraftLabels();
             UpdatePlayers();
+
+            // Show the output data button
+            btn_OutputCardData.Show();
         }
 
+        #region CardPoolVisuals
         private void ShowPlayerPool(Player player)
         {
             PlayerPoolView ppv = new PlayerPoolView(player);
@@ -185,6 +191,12 @@ namespace Draftsteel_Colossus_Visual
         private void btn_ShowCards7_Click(object sender, EventArgs e)
         {
             ShowPlayerPool(draft.allPlayers[7]);
+        }
+        #endregion
+
+        private void btn_OutputCardData_Click(object sender, EventArgs e)
+        {
+            draft.OutputCardData();
         }
     }
 }

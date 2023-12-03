@@ -108,7 +108,7 @@ namespace Draftsteel_Colossus
             }
         }
 
-        void OutputCardData()
+        public void OutputCardData()
         {
 
             emptyPools();
