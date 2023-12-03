@@ -19,7 +19,7 @@ namespace Draftsteel_Colossus
 
         //change this if you add attributes.
         //should be equal to the number of columns in the csv, -1.
-        private static int numberOfAttributes = 2;
+        private static int numberOfAttributes = 16;
 
         public Dictionary<string, float> personality;
 
