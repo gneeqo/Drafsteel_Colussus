@@ -105,6 +105,50 @@ namespace Draftsteel_Colossus
             }
         }
 
+        void OutputCardData()
+        {
+            String timeStamp = GetTimestamp(DateTime.Now);
+            
+            StreamWriter outputFile = new StreamWriter(Path.Combine(outputDirectory, "ExportedCardData" + "_" + timeStamp + ".csv"));
+            
+           
+            
+            
+            int column = 0;
+            
+            //writing the column headers
+            var exampleCard = allCards[0];
+            foreach (var item in exampleCard.attributes)
+            {
+                using (outputFile)
+                {
+                    outputFile.Write(item.Key);
+                    if (column != Card.numberOfAttributes)
+                    {
+                        outputFile.Write(",");
+                    }
+                }
+                column++;
+            }
+            outputFile.WriteLine();
+            
+            foreach (Card currCard in allCards)
+            {
+                column = 0;
+                foreach (var item in currCard.attributes)
+                {
+                    outputFile.Write(item.Value);
+                    if (column != Card.numberOfAttributes)
+                    {
+                        outputFile.Write(",");
+                    }
+                    
+                    column++;
+                }
+                outputFile.WriteLine();
+            }
+        }
+
         // Simple random shuffle function, just does n random swaps
         void Shuffle(List<Player> list)
         {
@@ -241,7 +285,7 @@ namespace Draftsteel_Colossus
             // At this point, all packs have been drafted and each player has a pool of cards and a win/loss score
             // Output all of the cards that each player has to a .txt for now
             OutputPlayerData();
-
+            OutputCardData();
             // TODO: Using the players that won/lost, adjust the values in the table accordingly
         }
 

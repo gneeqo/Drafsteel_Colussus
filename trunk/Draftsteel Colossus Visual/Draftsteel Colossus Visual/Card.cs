@@ -39,7 +39,7 @@ namespace Draftsteel_Colossus
 
         //change this if you add attributes.
         //should be equal to the number of columns in the csv, -1.
-        private static int numberOfAttributes = 18;
+        public static int numberOfAttributes = 18;
 
         public List<String> combos_names;
         public List<String> nonbos_names;
