@@ -67,6 +67,14 @@
             this.lb_Wins5 = new System.Windows.Forms.Label();
             this.lb_Wins6 = new System.Windows.Forms.Label();
             this.lb_Wins7 = new System.Windows.Forms.Label();
+            this.lb_Arch0 = new System.Windows.Forms.Label();
+            this.lb_Arch1 = new System.Windows.Forms.Label();
+            this.lb_Arch2 = new System.Windows.Forms.Label();
+            this.lb_Arch3 = new System.Windows.Forms.Label();
+            this.lb_Arch4 = new System.Windows.Forms.Label();
+            this.lb_Arch5 = new System.Windows.Forms.Label();
+            this.lb_Arch6 = new System.Windows.Forms.Label();
+            this.lb_Arch7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Player3)).BeginInit();
@@ -397,7 +405,7 @@
             this.lb_Wins0.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Wins0.Location = new System.Drawing.Point(466, 413);
             this.lb_Wins0.Name = "lb_Wins0";
-            this.lb_Wins0.Size = new System.Drawing.Size(74, 30);
+            this.lb_Wins0.Size = new System.Drawing.Size(59, 24);
             this.lb_Wins0.TabIndex = 31;
             this.lb_Wins0.Text = "Wins:";
             // 
@@ -471,6 +479,87 @@
             this.lb_Wins7.TabIndex = 38;
             this.lb_Wins7.Text = "Wins:";
             // 
+            // lb_Arch0
+            // 
+            this.lb_Arch0.AutoSize = true;
+            this.lb_Arch0.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch0.Location = new System.Drawing.Point(468, 97);
+            this.lb_Arch0.Name = "lb_Arch0";
+            this.lb_Arch0.Size = new System.Drawing.Size(66, 24);
+            this.lb_Arch0.TabIndex = 39;
+            this.lb_Arch0.Text = "Arch0";
+            // 
+            // lb_Arch1
+            // 
+            this.lb_Arch1.AutoSize = true;
+            this.lb_Arch1.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch1.Location = new System.Drawing.Point(823, 97);
+            this.lb_Arch1.Name = "lb_Arch1";
+            this.lb_Arch1.Size = new System.Drawing.Size(79, 30);
+            this.lb_Arch1.TabIndex = 40;
+            this.lb_Arch1.Text = "Arch1";
+            // 
+            // lb_Arch2
+            // 
+            this.lb_Arch2.AutoSize = true;
+            this.lb_Arch2.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch2.Location = new System.Drawing.Point(1192, 97);
+            this.lb_Arch2.Name = "lb_Arch2";
+            this.lb_Arch2.Size = new System.Drawing.Size(80, 30);
+            this.lb_Arch2.TabIndex = 41;
+            this.lb_Arch2.Text = "Arch2";
+            // 
+            // lb_Arch3
+            // 
+            this.lb_Arch3.AutoSize = true;
+            this.lb_Arch3.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch3.Location = new System.Drawing.Point(1552, 97);
+            this.lb_Arch3.Name = "lb_Arch3";
+            this.lb_Arch3.Size = new System.Drawing.Size(80, 30);
+            this.lb_Arch3.TabIndex = 42;
+            this.lb_Arch3.Text = "Arch3";
+            // 
+            // lb_Arch4
+            // 
+            this.lb_Arch4.AutoSize = true;
+            this.lb_Arch4.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch4.Location = new System.Drawing.Point(468, 557);
+            this.lb_Arch4.Name = "lb_Arch4";
+            this.lb_Arch4.Size = new System.Drawing.Size(81, 30);
+            this.lb_Arch4.TabIndex = 43;
+            this.lb_Arch4.Text = "Arch4";
+            // 
+            // lb_Arch5
+            // 
+            this.lb_Arch5.AutoSize = true;
+            this.lb_Arch5.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch5.Location = new System.Drawing.Point(823, 557);
+            this.lb_Arch5.Name = "lb_Arch5";
+            this.lb_Arch5.Size = new System.Drawing.Size(81, 30);
+            this.lb_Arch5.TabIndex = 44;
+            this.lb_Arch5.Text = "Arch5";
+            // 
+            // lb_Arch6
+            // 
+            this.lb_Arch6.AutoSize = true;
+            this.lb_Arch6.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch6.Location = new System.Drawing.Point(1192, 557);
+            this.lb_Arch6.Name = "lb_Arch6";
+            this.lb_Arch6.Size = new System.Drawing.Size(66, 24);
+            this.lb_Arch6.TabIndex = 45;
+            this.lb_Arch6.Text = "Arch6";
+            this.lb_Arch6.Click += new System.EventHandler(this.lb_Arch6_Click);
+            // 
+            // lb_Arch7
+            // 
+            this.lb_Arch7.AutoSize = true;
+            this.lb_Arch7.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Arch7.Location = new System.Drawing.Point(1552, 557);
+            this.lb_Arch7.Name = "lb_Arch7";
+            this.lb_Arch7.Size = new System.Drawing.Size(80, 30);
+            this.lb_Arch7.TabIndex = 46;
+            this.lb_Arch7.Text = "Arch7";
+            // 
             // Draft_Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -478,6 +567,14 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1743, 915);
+            this.Controls.Add(this.lb_Arch7);
+            this.Controls.Add(this.lb_Arch6);
+            this.Controls.Add(this.lb_Arch5);
+            this.Controls.Add(this.lb_Arch4);
+            this.Controls.Add(this.lb_Arch3);
+            this.Controls.Add(this.lb_Arch2);
+            this.Controls.Add(this.lb_Arch1);
+            this.Controls.Add(this.lb_Arch0);
             this.Controls.Add(this.lb_Wins7);
             this.Controls.Add(this.lb_Wins6);
             this.Controls.Add(this.lb_Wins5);
@@ -574,5 +671,13 @@
         private System.Windows.Forms.Label lb_Wins5;
         private System.Windows.Forms.Label lb_Wins6;
         private System.Windows.Forms.Label lb_Wins7;
+        private System.Windows.Forms.Label lb_Arch0;
+        private System.Windows.Forms.Label lb_Arch1;
+        private System.Windows.Forms.Label lb_Arch2;
+        private System.Windows.Forms.Label lb_Arch3;
+        private System.Windows.Forms.Label lb_Arch4;
+        private System.Windows.Forms.Label lb_Arch5;
+        private System.Windows.Forms.Label lb_Arch6;
+        private System.Windows.Forms.Label lb_Arch7;
     }
 }

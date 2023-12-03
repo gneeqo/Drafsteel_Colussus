@@ -14,6 +14,7 @@ namespace Draftsteel_Colossus_Visual
         List<PictureBox> playerImages = new List<PictureBox>();
         List<Label> playerLabels = new List<Label>();
         List<Label> winLabels = new List<Label>();
+        List<Label> archLabels = new List<Label>();
 
         public Draft_Visual(Draft _draft)
         {
@@ -48,8 +49,17 @@ namespace Draftsteel_Colossus_Visual
             winLabels.Add(lb_Wins6);
             winLabels.Add(lb_Wins7);
 
+            archLabels.Add(lb_Arch0);
+            archLabels.Add(lb_Arch1);
+            archLabels.Add(lb_Arch2);
+            archLabels.Add(lb_Arch3);
+            archLabels.Add(lb_Arch4);
+            archLabels.Add(lb_Arch5);
+            archLabels.Add(lb_Arch6);
+            archLabels.Add(lb_Arch7);
+
             // Hide the winLabels for now
-            foreach(var l in winLabels)
+            foreach (var l in winLabels)
             {
                 l.Hide();
             }
@@ -124,6 +134,11 @@ namespace Draftsteel_Colossus_Visual
 
             if (draft.round > 2)
                 lb_RoundCount.Text = "Rounds complete.";
+
+            for(int i = 0; i < archLabels.Count(); ++i)
+            {
+                archLabels[i].Text = draft.allPlayers[i].HighestValueArchetype();
+            }
         }
 
         private void btn_StartDraft_Click(object sender, EventArgs e)
@@ -220,6 +235,11 @@ namespace Draftsteel_Colossus_Visual
         private void btn_OutputCardData_Click(object sender, EventArgs e)
         {
             draft.OutputCardData();
+        }
+
+        private void lb_Arch6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

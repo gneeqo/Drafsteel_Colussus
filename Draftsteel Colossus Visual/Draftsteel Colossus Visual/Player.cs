@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Draftsteel_Colossus
 {
@@ -25,6 +26,26 @@ namespace Draftsteel_Colossus
         //cards that have been seen and can't be considered by the bot
         List<Card> seen;
 
+        public String HighestValueArchetype()
+        {
+            Dictionary<String, double> slurry = Player.AvgAttributes(pool);
+
+            if (slurry.Count == 0)
+                return "No archetype";
+
+            slurry.Remove("White");
+            slurry.Remove("Blue");
+            slurry.Remove("Black");
+            slurry.Remove("Red");
+            slurry.Remove("Green");
+            slurry.Remove("Value");
+            slurry.Remove("Infamy");
+
+            var keyOfMaxValue =
+           slurry.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+            return keyOfMaxValue;
+        }
 
         public static Dictionary<String, double> AvgAttributes(List<Card> poolToEvaluate)
         {
