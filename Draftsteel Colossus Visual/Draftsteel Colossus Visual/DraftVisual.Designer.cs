@@ -374,7 +374,7 @@
             // 
             // btn_OutputCardData
             // 
-            this.btn_OutputCardData.Font = new System.Drawing.Font("Beleren2016", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_OutputCardData.Font = new System.Drawing.Font("Beleren2016", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_OutputCardData.Location = new System.Drawing.Point(38, 721);
             this.btn_OutputCardData.Name = "btn_OutputCardData";
             this.btn_OutputCardData.Size = new System.Drawing.Size(235, 70);
