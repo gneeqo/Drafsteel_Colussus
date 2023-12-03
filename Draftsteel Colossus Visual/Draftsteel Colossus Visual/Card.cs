@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Draftsteel_Colossus
 {
+    public
     class Card
     {
         public String name;
@@ -96,13 +97,21 @@ namespace Draftsteel_Colossus
 
                                 //load the image into the card
                                 // Load the card's image
-                                if (!File.Exists("../../Images/" + currentCard.name + ".jpg"))
+                                string imagePath = "../../Images/" + currentCard.name + ".jpg";
+
+                                // See if the image file exists. If it doesn't, get it from Scryfall
+                                if (!File.Exists(imagePath))
                                 {
                                     currentCard.image = ScryfallAPI.GetCardImage(currentCard.name);
+
+                                    //put the image in the card class
+                                    if (currentCard.image != null)
+                                        currentCard.image.Save(imagePath);
                                 }
-                                //put the image in the card class
-                                if (currentCard.image != null)
-                                    currentCard.image.Save("../../Images/" + currentCard.name + ".jpg");
+                                else
+                                {
+                                    currentCard.image = new Bitmap(imagePath);
+                                }                          
 
                             }
                             else

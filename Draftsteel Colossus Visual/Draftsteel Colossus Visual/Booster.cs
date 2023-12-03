@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Draftsteel_Colossus
 {
+    public
     class Booster
     {
         public List<Card> remainingCards;
